@@ -9,6 +9,9 @@ name: Release
 on:
   push:
     tags: ["v*", "[0-9]*"]
+  # Run from the Actions tab (or the API) on main to publish the version in
+  # pyproject.toml without pushing a tag first; the last job then tags it.
+  workflow_dispatch:
 
 jobs:
   unitcorn:
@@ -43,3 +46,17 @@ jobs:
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist
+
+  tag:
+    needs: shim
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag the released version
+        run: |
+          version=$(grep -m1 '^version' pyproject.toml | cut -d'"' -f2)
+          git tag "v$version"
+          git push origin "v$version"
