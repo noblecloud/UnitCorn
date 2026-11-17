@@ -504,3 +504,6 @@ class Daily(PrecipitationRate, denominator=Time.Day): ...
 class Hourly(PrecipitationRate, denominator=Time.Hour): ...
 
 ```
+## License
+
+unitcorn is licensed under the GNU Lesser General Public License v3.0 only (`LICENSE.txt`, with the GPLv3 in `COPYING.txt`), so you can use it from software under any license; changes to unitcorn itself must stay under the LGPLv3. Releases published before this change stay MIT (`LICENSE-MIT-HISTORIC.txt`).
