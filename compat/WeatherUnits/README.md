@@ -16,3 +16,8 @@ pip install unitcorn
 and replace `WeatherUnits` with `unitcorn` in your imports. The `WU_CONFIG_PATH` and
 `WU_DEBUG` environment variables still work; their new names are
 `UNITCORN_CONFIG_PATH` and `UNITCORN_DEBUG`.
+
+## License
+
+Licensed under the GNU Lesser General Public License v3.0 only (`LICENSE.txt`, with the
+GPLv3 in `COPYING.txt`). Releases published before the switch stay MIT.
