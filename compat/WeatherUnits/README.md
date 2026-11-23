@@ -1,8 +1,8 @@
-# WeatherUnits → unitcorn 🦄
+# WeatherUnits → UnitCorn 🦄
 
-WeatherUnits has been renamed to **[unitcorn](https://pypi.org/project/unitcorn/)**.
+WeatherUnits has been renamed to **[UnitCorn](https://pypi.org/project/unitcorn/)**.
 
-This package is a forwarding shim: it depends on unitcorn, and `import WeatherUnits`
+This package is a forwarding shim: it depends on UnitCorn, and `import WeatherUnits`
 (and every `WeatherUnits.*` submodule) resolves to the matching `unitcorn` module,
 so classes are identical under both names. Importing it emits a `DeprecationWarning`.
 

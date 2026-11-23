@@ -1,11 +1,11 @@
-# unitcorn 🦄
+# UnitCorn 🦄
 Units that convert, localize and format themselves. Born for weather dashboards,
 good for anything you can measure.
 
 > **Formerly WeatherUnits.** The library outgrew its name: lengths, masses, time,
 > bytes and the whole derived-unit algebra are general-purpose, and the weather part
 > lives in the config. `pip install WeatherUnits` still works, as a shim that installs
-> unitcorn and forwards `import WeatherUnits` to it with a `DeprecationWarning` —
+> UnitCorn and forwards `import WeatherUnits` to it with a `DeprecationWarning` —
 > see [compat/WeatherUnits](compat/WeatherUnits/README.md).
 
 ```sh
@@ -506,4 +506,4 @@ class Hourly(PrecipitationRate, denominator=Time.Hour): ...
 ```
 ## License
 
-unitcorn is licensed under the GNU Lesser General Public License v3.0 only (`LICENSE.txt`, with the GPLv3 in `COPYING.txt`), so you can use it from software under any license; changes to unitcorn itself must stay under the LGPLv3. Releases published before this change stay MIT (`LICENSE-MIT-HISTORIC.txt`).
+UnitCorn is licensed under the GNU Lesser General Public License v3.0 only (`LICENSE.txt`, with the GPLv3 in `COPYING.txt`), so you can use it from software under any license; changes to UnitCorn itself must stay under the LGPLv3. Releases published before this change stay MIT (`LICENSE-MIT-HISTORIC.txt`).

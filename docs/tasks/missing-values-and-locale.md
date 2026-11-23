@@ -4,7 +4,7 @@
 **Base:** `dev`. Step one: `git checkout -B fix/missing-and-locale dev`.
 **Model:** Sonnet. Three independent parts; one commit each.
 
-unitcorn exists to normalise values from data APIs, and APIs send gaps. Every part below is a way the library misreports a gap, or misbehaves depending on the machine it runs on.
+UnitCorn exists to normalise values from data APIs, and APIs send gaps. Every part below is a way the library misreports a gap, or misbehaves depending on the machine it runs on.
 
 ## 1. NaN becomes the upper limit
 
