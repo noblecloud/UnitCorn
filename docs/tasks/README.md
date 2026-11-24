@@ -14,7 +14,7 @@ These are blocked on a judgment call, not on effort.
 
 | | |
 |---|---|
-| ~~**Library name**~~ | **Resolved 2026-10-22: `unitcorn`** 🦄. The general-purpose parts (`digital`, `mass`, `length`, `time_`, the derived algebra) outgrew `WeatherUnits`; the weather part lives in the config. Shipped in 0.9.0 as the `unitcorn` distribution and import, with `WeatherUnits` 0.9.0 kept as a forwarding shim in [`compat/WeatherUnits`](../../compat/WeatherUnits/README.md). Release order: publish `unitcorn`, then the shim. See [0.9.0.md](../change-logs/0.9.0.md). |
+| ~~**Library name**~~ | **Resolved 2026-10-22: `unitcorn`** 🦄. The general-purpose parts (`digital`, `mass`, `length`, `time_`, the derived algebra) outgrew `WeatherUnits`; the weather part lives in the config. Shipped in 0.9.0 as the `unitcorn` distribution and import. No compatibility shim — the `WeatherUnits` name is retired. See [0.9.0.md](../change-logs/0.9.0.md). |
 | ~~**`trailing_zero` vs `force_precision`**~~ | **Resolved 2026-07-25.** Both replaced by a single `trailing_zeros` taking `off \| precision \| fill \| <int>`, always capped by the budget. Default stays `off`, so no existing output changed. |
 | ~~**`shorten=False` on `Direction`**~~ | **Resolved 2026-07-25.** The budget counts compass *components*; the atom is a letter when abbreviated and a word when spelled out. Both forms now read one shared index ladder, so they always name the same heading. Word forms are derived from the abbreviations rather than kept in a parallel list — the old list had `NE` spelling as the single word `Northeast`, so word count never matched the budget. |
 

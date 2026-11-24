@@ -4,9 +4,8 @@ good for anything you can measure.
 
 > **Formerly WeatherUnits.** The library outgrew its name: lengths, masses, time,
 > bytes and the whole derived-unit algebra are general-purpose, and the weather part
-> lives in the config. `pip install WeatherUnits` still works, as a shim that installs
-> UnitCorn and forwards `import WeatherUnits` to it with a `DeprecationWarning` —
-> see [compat/WeatherUnits](compat/WeatherUnits/README.md).
+> lives in the config. There is no compatibility shim — `import unitcorn` is the only
+> path, and the old `WeatherUnits` distribution stays frozen at 0.8.0.
 
 ```sh
 pip install unitcorn
