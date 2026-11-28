@@ -28,7 +28,7 @@ class Config(ConfigParser):
 		self.optionxform = CaseInsensitiveKey
 		self.__localUnits = None
 		path = path or getEnv('CONFIG_PATH')
-		super(Config, self).__init__(allow_no_value=True)
+		super(Config, self).__init__(allow_no_value=True, interpolation=None)
 
 		if locale is not None:
 			self.locale = locale

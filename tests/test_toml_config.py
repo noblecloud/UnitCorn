@@ -65,3 +65,12 @@ def test_reading_either_format_localizes(tmp_path, suffix):
 		assert uc.Length.localizedUnit is uc.Length.Mile
 	finally:
 		config.read(str(original))
+
+
+def test_a_value_with_a_percent_sign_loads(tmp_path):
+	"""An app config holds other sections than unitcorn's: a strftime format must not fail the read."""
+	from unitcorn.config import Config
+	file = tmp_path / 'app.toml'
+	file.write_text('[Units]\nlength = "mi"\n\n[Logging]\nlogTimeFormat = "%m/%d/%y %H:%M:%S"\n')
+	config = Config(path=str(file))
+	assert config['Logging']['logTimeFormat'] == '%m/%d/%y %H:%M:%S'
