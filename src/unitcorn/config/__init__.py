@@ -70,7 +70,11 @@ class Config(ConfigParser):
 					log.debug(f'Loaded "{arg}"')
 					if Path(arg).suffix.lower() == '.toml':
 						with open(arg, 'rb') as file:
-							self.read_dict(self.fromToml(tomllib.load(file), source=str(arg)))
+							sections = self.fromToml(tomllib.load(file), source=str(arg))
+							# read_dict checks each value against the interpolation, and a `%` that an INI file
+							# would have kept (a log time format in the app's own file) is an error there.
+							# Doubling it reads back as the single `%` the file holds.
+							self.read_dict({name: {key: value.replace('%', '%%') for key, value in section.items()} for name, section in sections.items()})
 					else:
 						super().read(arg, **kwargs)
 					break
